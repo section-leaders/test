@@ -1,0 +1,298 @@
+body {
+    font-size: 1.5em;
+    background: #CCFFFF;
+}
+
+code,.cc {
+    font-family: 'Menlo', 'Lucida Sans Typewriter', 'Andale Mono',
+                 'Courier New', 'Courier', monospace;
+    font-size: 0.8em;
+    font-weight: normal;
+}
+
+.i {
+    font-family: 'Times New Roman', 'Times', serif;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.reveal table, .reveal table tbody {
+    margin: 0;
+    padding: 0;
+    color: black;
+    border-top: none;
+    border-bottom: none;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+.reveal caption {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+.reveal tbody {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+.reveal tfoot {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+.reveal thead {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+.reveal tr {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+.reveal th {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+.reveal td {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+.reveal canvas {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+.reveal figure {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+.CTControlStrip, .reveal .CTControlStrip {
+    margin: auto;
+}
+    
+.CTCanvas canvas {
+    display: block;
+    background-color: white;
+}
+
+.CodeTrace {
+    position: relative;
+    background: white;
+    color: black;
+    border: solid 1px black;
+    width: 600px;
+    height: 400px;
+    overflow: hidden;
+}
+
+.CodeTrace pre {
+    margin: 0px;
+}
+
+.CTStackFrame {
+    position: absolute;
+    border: double 10px black;
+    background: white;
+    font-family: 'Menlo', 'Lucida Sans Typewriter', 'Andale Mono',
+                 'Courier New', 'Courier', monospace;
+    font-size: 0.8em;
+    font-weight: normal;
+    text-align: left;
+    line-height: 1.2em;
+    margin: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    white-space: pre;
+}
+
+.CTVariable {
+    position: absolute;
+    padding: 0px;
+}
+
+.CTVarLabel {
+    text-align: left;
+    padding: 0px;
+}
+
+.CTVarContents tbody, .reveal .CTVarContents table tbody {
+    border: solid 2px black;
+    padding: 0px;
+}
+
+.CTVarContents td, .reveal .CTVarContents table td {
+    border: inherit;
+    color: black;
+    text-align: center;
+    padding: 0px;
+}
+
+.CTArray {
+    position: absolute;
+    color: black;
+    padding: 0px;
+}
+
+.reveal .CTArrayTable {
+    padding: 0px;
+}
+
+.reveal .CTArrayLabel {
+    text-align: left;
+    padding: 0px;
+}
+
+.reveal .CTArrayElement {
+    border: solid 2px black;
+    background-color: white;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0px;
+    width: 90px;
+    height: 70px;
+}
+
+.reveal .CTArrayIndex {
+    border: none;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0px;
+    font-size: 0.7em;
+}
+
+.reveal .CTPointer {
+    position: absolute;
+}
+
+.CTValueTag {
+    position: absolute;
+}
+
+.CTValueTag tbody, .reveal .CTValueTag tbody {
+    border: solid 2px black;
+}
+
+.CTValueTag td, .reveal .CTValueTag td {
+    background: yellow;
+    color: black;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0px;
+}
+
+.u {
+    font-family: 'Monaco', 'Lucida Sans Typewriter', monospace;
+}
+
+.m {
+    font-family: 'Menlo', 'Courier New', monospace;
+}
+
+.prompt {
+    color: #660000;
+}
+
+.comment {
+    color: #009999;
+}
+
+.keyword {
+    color: #CC6600;
+}
+
+.builtin {
+    color: #993399;
+}
+
+.string, .strlit {
+    color: #006600;
+}
+
+.number {
+    color: #000000;
+}
+
+.error {
+    color: #FF0000;
+}
+
+.docstring {
+    color: #006600;
+}
+
+.highlighted {
+    border: solid 2.5px red;
+    margin: -2.5px;
+}
+
+.CTButton {
+    width: 120px;
+}
+
+// Debug the tooltip model
+
+.CTToolTip {
+    position: relative;
+    display: inline-block;
+}
+
+.CTToolTip .CTToolText {
+    visibility: hidden;
+    width: 120px;
+    background-color: DarkGray;
+    color: #LightBlue;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
+    z-index: 1;
+}
+
+.CTToolTip:hover .CTToolText {
+    visibility: visible;
+}

@@ -1,0 +1,111 @@
+.fillin {
+    border: none;
+    border-bottom: solid 1px black;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.check {
+    color: green;
+    visibility: hidden;
+}
+
+.charname {
+    font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+    font-size: 0.8em;
+}
+
+.pi {
+    text-align: center;
+}
+
+.ip {
+    margin-top: 0em;
+    margin-bottom: 1.0em;
+    text-align: justify;
+    text-indent: 1.5em;
+    line-height: 1.3em;
+    text-autospace: none;
+    font-size: 1.0em;
+    font-family: 'Times New Roman', serif;
+}
+
+.figure {
+    border: solid 2px black;
+    padding: 5px;
+    margin: auto;
+    margin-top: 0.5em;
+    margin-bottom: 1.0em;
+}
+
+div.bh {
+    font-size: 1.1em;
+    font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+}
+
+.ct {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+}
+
+.xt {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+}
+
+.codediv {
+    position: relative;
+    font-family: 'Courier New', monospace;
+    font-size: 1.2em;
+    font-weight: bold;
+    line-height: 1.35em;
+    page-break-after: avoid;
+    text-autospace: none;
+    white-space: pre;
+}
+
+.i {
+    font-family: 'Times New Roman', serif;
+    font-weight: normal;
+    font-style: italic
+}
+
+.u {
+    font-family: 'Monaco', 'Lucida Sans Typewriter', monospace;
+}
+
+.m {
+    font-family: 'Menlo', 'Courier New', monospace;
+}
+
+.prompt {
+    color: #660000;
+}
+
+.comment {
+    color: #009999;
+}
+
+.keyword {
+    color: #CC6600;
+}
+
+.builtin {
+    color: #993399;
+}
+
+.string, .strlit {
+    color: #006600;
+}
+
+.number {
+    color: #000000;
+}
+
+.error {
+    color: #FF0000;
+}
+
+.docstring {
+    color: #006600;
+}

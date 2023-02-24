@@ -1,0 +1,137 @@
+.reveal h2 {
+    text-transform: none;
+}
+
+.CodeBox {
+    margin: auto;
+    text-align: left;
+    font-family: "Menlo", "Courier New", monospace;
+    font-size: 0.9em;
+    color: black;
+    background-color: white;
+    padding: 8px;
+    white-space: pre;
+}
+.CodeExample {
+    width: fit-content;
+    margin-top: 0.8em;
+    margin-bottom: 1em;
+    margin-left: 110px;
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+}
+
+.CodeScrollBox {
+    margin: auto;
+    text-align: left;
+    font-family: "Menlo", "Courier New", monospace;
+    font-size: 0.85em;
+    width: 1900px;
+    height: 940px;
+    overflow-y: scroll;
+    color: black;
+    background-color: white;
+    padding: 8px;
+    white-space: pre;
+}
+
+.u {
+    font-family: "Monaco", "Lucida Sans Typewriter", monospace;
+    font-size: 0.9em;
+}
+
+.m {
+    font-family: "Menlo", "Courier New", monospace;
+    font-size: 0.9em;
+}
+
+.mb {
+    font-family: "Menlo", "Courier New", monospace;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.h {
+    font-family: "Helvetica Neue", "Helvetica", sans-serif
+}
+
+.hb {
+    font-family: "Helvetica Neue", "Helvetica", sans-serif
+    font-weight: bold;
+}
+
+.i {
+    font-family: "Times New Roman", serif;
+    font-style: italic;
+    font-size: 1.1em;
+}
+
+.t {
+    font-family: "Times New Roman", serif;
+    font-style: normal;
+}
+
+.prompt {
+    color: #660000;
+}
+
+.bbprompt {
+    color: #CC6666;
+}
+
+.comment {
+    color: #009999;
+}
+
+.bbcomment {
+    color: #66CCCC;
+}
+
+.keyword {
+    color: #CC6600;
+}
+
+.bbkeyword {
+    color: #FF9933;
+}
+
+.builtin {
+    color: #993399;
+}
+
+.bbbuiltin {
+    color: #CC66CC;
+}
+
+.string, .strlit {
+    color: #009900;
+}
+
+.bbstring, .bbstrlit {
+    color: #66CC66;
+}
+
+.number {
+    color: #000000;
+}
+
+.bbnumber {
+    color: #000000;
+}
+
+.error {
+    color: #FF0000;
+}
+
+.bberror {
+    color: #FF6666;
+}
+
+.docstring {
+    color: #006600;
+}
+
+.bbdocstring {
+    color: #66CC66;
+}
+
