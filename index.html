@@ -47,13 +47,13 @@ With the given constants
 <span class="mb"><span class="bbcomment">SQUARE_WIDTH</span></span>,
 and a GRect object with the appropriate dimensions named <span class="mb">square</span>,
 which of the following would create a square that is horizontally centered and at the top of the window?
-<p class="Response" data-response="Incorrect">(a) <span class="mb">gw.add(square, <span class="bbcomment">WINDOW_WIDTH</span>//2, 0)</span></p>
+<p class="Response" data-response="Incorrect">(a) <span class="mb">gw.add(square, <span class="bbcomment">WINDOW_WIDTH</span>/2, 0)</span></p>
 
-<p class="Response" data-response="Incorrect">(b) <span class="mb">gw.add(square, <span class="bbcomment">WINDOW_WIDTH</span>//2 - <span class="bbcomment">SQUARE_WIDTH</span>, 0)</span></p>
+<p class="Response" data-response="Incorrect">(b) <span class="mb">gw.add(square, <span class="bbcomment">WINDOW_WIDTH</span>/2 - <span class="bbcomment">SQUARE_WIDTH</span>, 0)</span></p>
 
-<p class="Response" data-response="Correct">(c) <span class="mb">gw.add(square, <span class="bbcomment">WINDOW_WIDTH</span>//2 - (<span class="bbcomment">SQUARE_WIDTH</span>//2), 0)</span></p>
+<p class="Response" data-response="Correct">(c) <span class="mb">gw.add(square, <span class="bbcomment">WINDOW_WIDTH</span>/2 - (<span class="bbcomment">SQUARE_WIDTH</span>/2), 0)</span></p>
 
-<p class="Response" data-response="Incorrect">(d) <span class="mb">gw.add(square, <span class="bbcomment">WINDOW_WIDTH</span>//2 + (<span class="bbcomment">SQUARE_WIDTH</span>//2), 0)</span></p>
+<p class="Response" data-response="Incorrect">(d) <span class="mb">gw.add(square, <span class="bbcomment">WINDOW_WIDTH</span>/2 + (<span class="bbcomment">SQUARE_WIDTH</span>/2), 0)</span></p>
 <div class="NarrativeArea">
 <p class="Narrative Correct">Correct!</p>
 <p class="Narrative Incorrect">Objects are positioned based on their top left corner, so placing the square at half the window width
@@ -67,13 +67,13 @@ would make the left edge of the square at the center. Thus, the square needs to 
 <h2>Working with Constants</h2>
 <div class="Question MultipleChoice">
 Using the same constants, which of the following would create a square centered in the left half of the window and at the top?
-<p class="Response" data-response="Correct">(a) <span class="mb"> gw.add(square, <span class="bbcomment">WINDOW_WIDTH</span>//4 - (<span class="bbcomment">SQUARE_WIDTH</span>//2), 0)</span></p>
+<p class="Response" data-response="Correct">(a) <span class="mb"> gw.add(square, <span class="bbcomment">WINDOW_WIDTH</span>/4 - (<span class="bbcomment">SQUARE_WIDTH</span>/2), 0)</span></p>
   
-<p class="Response" data-response="Incorrect">(b) <span class="mb"> gw.add(square, <span class="bbcomment">WINDOW_WIDTH</span>//4 - (<span class="bbcomment">SQUARE_WIDTH</span>//4), 0)</span></p>
+<p class="Response" data-response="Incorrect">(b) <span class="mb"> gw.add(square, <span class="bbcomment">WINDOW_WIDTH</span>/4 - (<span class="bbcomment">SQUARE_WIDTH</span>/4), 0)</span></p>
   
-<p class="Response" data-response="Incorrect">(c) <span class="mb"> gw.add(square, <span class="bbcomment">WINDOW_WIDTH</span>//4, 0)</span></p>
+<p class="Response" data-response="Incorrect">(c) <span class="mb"> gw.add(square, <span class="bbcomment">WINDOW_WIDTH</span>/4, 0)</span></p>
   
-<p class="Response" data-response="Incorrect">(d) <span class="mb"> gw.add(square, 3 * (<span class="bbcomment">WINDOW_WIDTH</span>//4) - (<span class="bbcomment">SQUARE_WIDTH</span>//2), 0)</span></p>
+<p class="Response" data-response="Incorrect">(d) <span class="mb"> gw.add(square, 3 * (<span class="bbcomment">WINDOW_WIDTH</span>/4) - (<span class="bbcomment">SQUARE_WIDTH</span>/2), 0)</span></p>
 <div class="NarrativeArea">
 <p class="Narrative Correct">Correct!</p>
 <p class="Narrative Incorrect">Objects are positioned based on their top left corner, so the square needs to be moved to the left by half its width.
