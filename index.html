@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Syntax and Style</title>
+<title>Working with Constants</title>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -19,36 +19,16 @@
 <div class="reveal">
 <div class="slides">
 
-<section id="Range1" class="slide">
-<h2>Syntax and Style</h2>
-<div class="Question MultipleChoice">
-Which of the following is the correct syntax for an
-<span class="mb"><span class="bbbuiltin">if</span></span> statement?
-<p class="Response" data-response="Incorrect">(a) <span class="mb"><span class="bbbuiltin"> if </span> x == 5</span></p>
-
-<p class="Response" data-response="Incorrect">(b) <span class="mb"><span class="bbbuiltin"> if </span> x == 5()</span></p>
-
-<p class="Response" data-response="Correct">(c) <span class="mb"><span class="bbbuiltin"> if </span> x == 5:</span></p>
-
-<p class="Response" data-response="Incorrect">(d) <span class="mb"><span class="bbbuiltin"> if </span> x == 5():</span></p>
-<div class="NarrativeArea">
-<p class="Narrative Correct">Correct!</p>
-<p class="Narrative Incorrect">Parentheses are reserved for defining and using functions, and <span class="mb bbbuiltin">if</span> is not a function.
-Because Python expects an indented block of code after the given condition, a colon is required.</p>
-</div>
-</div>
-</section>
-
-<section id="Range2" class="slide">
-<h2>Syntax and Style</h2>
+<section id="Constants1" class="slide">
+<h2>Working with Constants</h2>
 <div class="Question MultipleChoice">
 Which of the following styles is commonly (although not necessarily) used for variables which are <b>constant</b>?
 <p class="Response" data-response="Incorrect">(a) <span class="mb"> width = 100</span>
-
+    
 <p class="Response" data-response="Correct">(b) <span class="mb"> WIDTH = 100</span>
-
+    
 <p class="Response" data-response="Incorrect">(c) <span class="mb"> Width = 100</span>
-
+    
 <p class="Response" data-response="Incorrect">(d) <span class="mb"> w = 100</span>
 <div class="NarrativeArea">
 <p class="Narrative Correct">Correct!</p>
@@ -58,6 +38,50 @@ Typically, they are represented using all capital letters.
 </div>
 </div>
 </section>
+
+<section id="Constants2" class="slide">
+<h2>Working with Constants</h2>
+<div class="Question MultipleChoice">
+With the given constants
+<span class="mb"><span class="bbcomment">WINDOW_WIDTH</span></span> and
+<span class="mb"><span class="bbcomment">SQUARE_WIDTH</span></span>,
+and a GRect object with the appropriate dimensions named <span class="mb">square</span>,
+which of the following would create a square that is horizontally centered and at the top of the window?
+<p class="Response" data-response="Incorrect">(a) <span class="mb">gw.add(square, <span class="bbcomment">WINDOW_WIDTH</span>//2, 0)</span></p>
+
+<p class="Response" data-response="Incorrect">(b) <span class="mb">gw.add(square, <span class="bbcomment">WINDOW_WIDTH</span>//2 - <span class="bbcomment">SQUARE_WIDTH</span>, 0)</span></p>
+
+<p class="Response" data-response="Correct">(c) <span class="mb">gw.add(square, <span class="bbcomment">WINDOW_WIDTH</span>//2 - (<span class="bbcomment">SQUARE_WIDTH</span>//2), 0)</span></p>
+
+<p class="Response" data-response="Incorrect">(d) <span class="mb">gw.add(square, <span class="bbcomment">WINDOW_WIDTH</span>//2 + (<span class="bbcomment">SQUARE_WIDTH</span>//2), 0)</span></p>
+<div class="NarrativeArea">
+<p class="Narrative Correct">Correct!</p>
+<p class="Narrative Incorrect">Objects are positioned based on their top left corner, so placing the square at half the window width
+would make the left edge of the square at the center. Thus, the square needs to be moved to the left by half its width.
+</p>
+</div>
+</div>
+</section>
+
+<section id="Constants3" class="slide">
+<h2>Working with Constants</h2>
+<div class="Question MultipleChoice">
+Using the same constants, which of the following would create a square centered in the left half of the window and at the top?
+<p class="Response" data-response="Correct">(a) <span class="mb"> gw.add(square, <span class="bbcomment">WINDOW_WIDTH</span>//4 - (<span class="bbcomment">SQUARE_WIDTH</span>//2), 0)</span></p>
+  
+<p class="Response" data-response="Incorrect">(b) <span class="mb"> gw.add(square, <span class="bbcomment">WINDOW_WIDTH</span>//4 - (<span class="bbcomment">SQUARE_WIDTH</span>//4), 0)</span></p>
+  
+<p class="Response" data-response="Incorrect">(c) <span class="mb"> gw.add(square, <span class="bbcomment">WINDOW_WIDTH</span>//4, 0)</span></p>
+  
+<p class="Response" data-response="Incorrect">(d) <span class="mb"> gw.add(square, 3 * (<span class="bbcomment">WINDOW_WIDTH</span>//4) - (<span class="bbcomment">SQUARE_WIDTH</span>//2), 0)</span></p>
+<div class="NarrativeArea">
+<p class="Narrative Correct">Correct!</p>
+<p class="Narrative Incorrect">Objects are positioned based on their top left corner, so the square needs to be moved to the left by half its width.
+</p>
+</div>
+</div>
+</section>
+
 
 
 <script src="js/reveal.js"></script>
