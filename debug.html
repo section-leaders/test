@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Debugging</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link href="css/reset.css" rel="stylesheet" />
+    <link href="css/reveal.css" rel="stylesheet" />
+    <link href="css/theme/python_monokai.css" rel="stylesheet" id="theme" />
+    <link href="css/plugin/highlight/monokai.css" rel="stylesheet" />
+    <link href="css/codetrace.css" rel="stylesheet" />
+    <link href="css/rembold.css" rel="stylesheet" />
+    <link href="css/roberts.css" rel="stylesheet" />
+    <link href="debug.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="reveal">
+    <div class="slides">
+      <section id="DebugTitle" class="slide" style="display: none;" aria-hidden="true">
+      <h1>Debugging</h1>
+      </section>
+    <section id="Debug1a" class="slide" style="display: none;" aria-hidden="true">
+      <h2>Debugging 1</h2>
+      <div class="Question MultipleChoice">Given this error message, which line of code would you be able to find the error on?  
+        <span class="mb" style="white-space: pre-wrap; font-size: 0.7em">
+          Traceback (most recent call last):
+          File "filename", line 8, in <module>     
+            error1() 
+          File "filename", line 6, in error1
+            print(c)
+          IndexError: string index out of range
+        </span><br>
+        <table style="width: 100%;">
+          <tr>
+            <td class="ResponseLeft" data-response="IncorrectConfused" style="font-size: 1em;">
+              (a) <span class="m">7</span>
+            </td>
+            <td class="ResponseLeft" data-response="IncorrectFunctionCall" style="font-size: 1em;">
+              (b) <span class="m">8</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="ResponseLeft" data-response="Correct" style="font-size: 1em;">
+              (c) <span class="m">6</span>
+            </td>
+            <td class="ResponseLeft" data-response="IncorrectConfused" style="font-size: 1em;">
+              (d) <span class="m">1</span>
+            </td>
+          </tr>
+        </table>       
+        <div class="NarrativeArea">
+          <p class="Narrative Correct">Correct!</p>
+          <p class="Narrative IncorrectConfused"> Look at the error message. What line does it say
+            has an error? </p>
+          <p class="Narrative IncorrectFunctionCall">Close! That line is the function call that produced
+            the error. The traceback gets more specific as to the location of the error as it goes. Try again!
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="Debug1b" class="slide" style="display:none;" area-hidden="true">
+      <h2>Debugging 1</h2>
+      <div class="Question MultipleChoice">Which of the following would produce an IndexError on line 6?
+        Assume that the function definition is line 1. 
+      <table style="width:100%"">
+        <tr>
+          <td class="ResponseLeft" data-response="Correct" >(a)
+          <span class="m" style="white-space: pre-wrap;">  
+        <span class='keyword'>def</span> error1():
+            a = <span class='strlit'>"hello world"</span>
+            b = <span class='strlit'>"hi there"</span>
+            <span class='keyword'>for</span> i <span class='keyword'>in</span> <span class='builtin'>range</span>(<span class='builtin'>len</span>(a)):   
+                <span class='keyword'>for</span> j <span class='keyword'>in</span> <span class='builtin'>range</span>(<span class='builtin'>len</span>(b)):
+                    <span class='builtin'>print</span>(b[i-j])</span>
+          </td>
+          
+            <td class="ResponseLeft" data-response="IncorrectAttribute">(b)
+              <span class="m" style="white-space: pre-wrap;">
+            <span class='keyword'>def</span> error1():
+                a = <span class='strlit'>"hello world"</span>
+                b = <span class='builtin'>len</span>(a)
+                c = <span class='strlit'>""</span>
+                <span class='keyword'>for</span> i <span class='keyword'>in</span> <span class='builtin'>range</span>(b):
+                    a[i].<span class='builtin'>print</span>()
+                    c += a[i]</span>
+            </td>
+        </tr>
+        <tr>
+          
+          <td class="ResponseLeft" data-response="IncorrectName">(c)
+          <span class="m" style="white-space: pre-wrap;">
+        <span class='keyword'>def</span> error1():
+            ay = <span class='strlit'>"hello world"</span>
+            b = <span class='builtin'>len</span>(ay)
+            <span class='keyword'>for</span> i <span class='keyword'>in</span> <span class='builtin'>range</span>(b):
+                ay += ay[i]
+                <span class='builtin'>print</span>(a)</span>
+          </td>
+          
+          <td class="ResponseLeft" data-response="IncorrectType" >(d)
+          <span class="m" style="white-space: pre-wrap;">
+        <span class='keyword'>def</span> error1():
+            a = <span class='strlit'>"hello world"</span>
+            b = <span class='strlit'>""</span>
+            <span class='keyword'>while</span> <span class='builtin'>len</span>(a) &gt; 0:
+                b += a[<span class='builtin'>len</span>(a) - 1]
+                a -= b
+                <span class='builtin'>print</span>(a)</span>
+          </td>
+        </tr>
+      </table>
+        
+        <div class="NarrativeArea">
+          <p class="Narrative Correct">Correct! This is an IndexError; they occur when you try to use an index 
+            that isn't present in the object you're indexing. 
+          </p>
+          <p class="Narrative IncorrectAttribute">This is an AttributeError; they occur when you try to access an 
+            element or method of an object that doesn't have that element or method as an attribute. Try again!
+          </p>
+          <p class="Narrative IncorrectName"> This is a NameError; they occur when you try to use a variable 
+            that you haven't defined. Try again!
+          </p>
+          <p class="Narrative IncorrectType">This is a TypeError; they occur when you try to do an operation that
+            is used for one type of variable on a type that doesn't support that operation. Try again!
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+    <section id="Debug1c" class="slide" style="display: none;" aria-hidden="true">
+      <h2>Debugging 1</h2>
+      <div class="Question MultipleChoice">Replacing line 6 with which of the following would result in the following program running error-free? 
+        <span class="mb" style="white-space: pre-wrap; text-align: center; font-size: 0.7em;">
+      <span class='keyword'>def</span> error1():
+          a = <span class='strlit'>"hello world"</span>
+          b = <span class='strlit'>"hi there"</span>
+          <span class='keyword'>for</span> i <span class='keyword'>in</span> <span class='builtin'>range</span>(<span class='builtin'>len</span>(a)):   
+              <span class='keyword'>for</span> j <span class='keyword'>in</span> <span class='builtin'>range</span>(<span class='builtin'>len</span>(b)):
+                  <span class='builtin'>print</span>(b[i-j])
+                </span>
+        <table style="width: 100%;">
+          <tr>
+        <td class="ResponseLeft" data-response="IncorrectType" style="font-size: 1em;">(a) replacing it with 
+          <span class="m"><span class='builtin'>print</span>(b[j/2])</span> 
+        </td>
+        <td class="ResponseLeft" data-response="IncorrectDivideZero" style="font-size: 1em;">(b) replacing it with
+          <span class="m"><span class='builtin'>print</span>(b[i % j])</span>
+        </td>
+        </tr>
+        <tr>
+        <td class="ResponseLeft" data-response="IncorrectSyntax" style="font-size: 1em;">(c) replacing it with
+          <span class="m"><span class='builtin'>print</span>(b[j] a[j])</span>
+        </td>
+        <td class="ResponseLeft" data-response="Correct" style="font-size: .9em;">(d) replacing it with
+          <span class="m"><span class='builtin'>print</span>(b[i % <span class='builtin'>len</span>(b)])</span>
+        </td>
+        </tr>
+        </table>
+        <div class="NarrativeArea">
+          <p class="Narrative Correct">Correct! This would allow the code to run with no errors!</p>
+          <p class="Narrative IncorrectType">Remember that using a single division sign produces floats, 
+            which can't be used as indices. This would produce a TypeError. Try again!</p>
+          <p class="Narrative IncorrectDivideZero">the value of <span class="m">j</span> starts at 0, 
+            so trying to use the remainder operation with it in the denominator would produce a 
+            DivideByZero error. Try again!
+          </p>
+          <p class="Narrative IncorrectSyntax">If you want to print out multiple things on the same line, 
+            you need to put a comma or a plus sign in between them. This would produce a SyntaxError. Try again!
+          </p>
+          
+        </div>
+      </div>
+    </section>
+    <section id="Debug2a" class="slide" style="display: none;" aria-hidden="true">
+      <h2>Debugging 2</h2>
+      <div class="Question MultipleChoice">Given this error message, what line of code would you find the error on, and what kind of error is it?
+      <span class="mb" style="white-space: pre-wrap; font-size: 0.7em">
+        Traceback (most recent call last):
+        File "filename", line 7, in <module>     
+          error2() 
+        File "filename", line 4, in error2
+          a++
+        SyntaxError: invalid syntax
+      </span><br>
+      
+      <table style="width: 100%">
+        <tr>
+          <td class="ResponseLeft" data-response="IncorrectType" style="font-size: 1em"> (a)
+            line 4, TracebackError
+          </td>
+          <td class="ResponseLeft" data-response="Correct" style="font-size: 1em"> (b)
+            line 4, SyntaxError
+          </td>
+        </tr>
+        <tr>
+          <td class="ResponseLeft" data-response="IncorrectLine" style="font-size: 1em">(c)
+            line 7, TracebackError
+          </td>
+          <td class="ResponseLeft" data-response="IncorrectLineType" style="font-size: 1em;"> (d)
+            line 7, SyntaxError
+          </td>
+        </tr>
+      </table>
+      <div class="NarrativeArea">
+        <p class="Narrative Correct">Correct!
+        </p>
+        <p class="Narrative IncorrectLine"> The function call is on line 7, not the actual error. Follow the traceback to 
+          find where the actual error was produced. Try again!
+        </p>
+        <p class="Narrative IncorrectType"> The traceback is what tells you where the error is and what type of error it is. Look closer 
+          at the last line of the traceback. Try again! 
+        </p>
+        <p class="Narrative IncorrectLineType">The function call is on line 7, not the actual error. Additionally, 
+          the traceback is what tells you where the error is and what kind of error it is, not the actual error type. Try again!
+        </p>
+      </div>
+    </div>
+    </section>
+    <section id="Debug2b" class="slide" style="display: none;" aria-hidden="true">
+      <h2> Debugging 2 </h2>
+      <div class="Question MultipleChoice"> Given the following code that produces a SyntaxError on line 4, 
+        how would you change line 4 to let it run error-free?
+        <span class="m" style="white-space: pre-wrap;">
+<span class='keyword'>def</span> error2(): 
+            a = 0
+    <span class='keyword'>for</span> i <span class='keyword'>in</span> <span class='builtin'>range</span>(3):
+        a++
+    <span class='keyword'>return</span> a
+error2()</span>
+<table style="width: 100%">
+  <tr>
+    <td class="ResponseLeft" data-response="Correct" style="font-size: 0.9em"> (a)
+      <span class="m"> a += 1 </span>
+    </td>
+    <td class="ResponseLeft" data-response="IncorrectDivideZero" style="font-size: 0.9em">(b)
+      <span class="m"> a *= 1/i </span>
+    </td>
+  </tr>
+  <tr>
+    <td class="ResponseLeft" data-response="IncorrectDivideZero" style="font-size: 0.9em"> (c)
+      <span class="m"> a = 1 / a</span>
+    </td>
+    <td class="ResponseLeft" data-response="IncorrectType" style="font-size: 0.9em"> (d)
+      <span class="m" > a *='b' </span>
+    </td>
+  </tr>
+</table>
+<div class="NarrativeArea">
+  <p class="Narrative Correct">Correct!</p>
+  <p class="Narrative IncorrectDivideZero">This would produce a DivideByZero error, because <span class="m">i</span>
+    and <span class="m">a</span> both start as 0. 
+  </p>
+  <p class="Narrative IncorrectType">This would produce a TypeError, because while you can multiply strings by integers, 
+    you can't multiply integers by strings. 
+  </p>
+</div>
+      </div>
+    </section>
+    
+
+    <script src="js/reveal.js"></script>
+
+    <!-- reveal.js plugins -->
+
+    <script src="js/plugin/notes/notes.js"></script>
+    <script src="js/plugin/search/search.js"></script>
+    <script src="js/plugin/zoom/zoom.js"></script>
+    <script src="js/plugin/chart/Chart.min.js"></script>
+    <script src="js/plugin/chart/plugin.js"></script>
+    <script src="js/plugin/chalkboard/plugin.js"></script>
+    <script src="js/plugin/math/math.js"></script>
+    <script src="js/plugin/highlight/highlight.js"></script>
+    <script src="debug.js"></script>
+
+    <script>
+
+          // Full list of configuration options available at:
+          // https://revealjs.com/config/
+          Reveal.initialize({
+                    //autoAnimateEasing: 'ease-in',
+                    //autoAnimateDuration: 1.0,
+                    //autoAnimateUnmatched: false,
+            // Display controls in the bottom right corner
+            controls: true,
+            // Help the user learn the controls by providing hints, for example by
+            // bouncing the down arrow when they first encounter a vertical slide
+            controlsTutorial: true,
+            // Determines where controls appear, "edges" or "bottom-right"
+            controlsLayout: 'bottom-right',
+            // Visibility rule for backwards navigation arrows; "faded", "hidden"
+            // or "visible"
+            controlsBackArrows: 'faded',
+            // Display a presentation progress bar
+            progress: true,
+            // Display the page number of the current slide
+            slideNumber: true,
+            // Add the current slide number to the URL hash so that reloading the
+            // page/copying the URL will return you to the same slide
+            hash: true,
+            // Push each slide change to the browser history
+            history: true,
+            // Enable keyboard shortcuts for navigation
+            keyboard: true,
+            // Enable the slide overview mode
+            overview: true,
+            // Vertical centering of slides
+            center: false,
+            // Enables touch navigation on devices with touch input
+            touch: true,
+            // Loop the presentation
+            loop: false,
+            // Change the presentation direction to be RTL
+            rtl: false,
+            // see https://revealjs.com/vertical-slides/#navigation-mode
+            navigationMode: 'default',
+            // Randomizes the order of slides each time the presentation loads
+            shuffle: false,
+            // Turns fragments on and off globally
+            fragments: true,
+            // Flags whether to include the current fragment in the URL,
+            // so that reloading brings you to the same fragment position
+            fragmentInURL: false,
+            // Flags if the presentation is running in an embedded mode,
+            // i.e. contained within a limited portion of the screen
+            embedded: false,
+            // Flags if we should show a help overlay when the questionmark
+            // key is pressed
+            help: true,
+            // Flags if speaker notes should be visible to all viewers
+            showNotes: false,
+            // Global override for autoplaying embedded media (video/audio/iframe)
+            // - null: Media will only autoplay if data-autoplay is present
+            // - true: All media will autoplay, regardless of individual setting
+            // - false: No media will autoplay, regardless of individual setting
+            autoPlayMedia: true,
+            // Global override for preloading lazy-loaded iframes
+            // - null: Iframes with data-src AND data-preload will be loaded when within
+            //   the viewDistance, iframes with only data-src will be loaded when visible
+            // - true: All iframes with data-src will be loaded when within the viewDistance
+            // - false: All iframes with data-src will be loaded only when visible
+            preloadIframes: null,
+            // Number of milliseconds between automatically proceeding to the
+            // next slide, disabled when set to 0, this value can be overwritten
+            // by using a data-autoslide attribute on your slides
+            autoSlide: 0,
+            // Stop auto-sliding after user input
+            autoSlideStoppable: true,
+            // Use this method for navigation when auto-sliding
+            autoSlideMethod: null,
+            // Specify the average time in seconds that you think you will spend
+            // presenting each slide. This is used to show a pacing timer in the
+            // speaker view
+            defaultTiming: null,
+            // Enable slide navigation via mouse wheel
+            mouseWheel: false,
+            // Hide cursor if inactive
+            hideInactiveCursor: true,
+            // Time before the cursor is hidden (in ms)
+            hideCursorTime: 5000,
+            // Opens links in an iframe preview overlay
+            previewLinks: false,
+            // Transition style
+            transition: 'slide', // none/fade/slide/convex/concave/zoom
+            // Transition speed
+            transitionSpeed: 'default', // default/fast/slow
+            // Transition style for full page slide backgrounds
+            backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+            // Number of slides away from the current that are visible
+            viewDistance: 3,
+            // Number of slides away from the current that are visible on mobile
+            // devices. It is advisable to set this to a lower number than
+            // viewDistance in order to save resources.
+            mobileViewDistance: 2,
+            // The "normal" size of the presentation, aspect ratio will be preserved
+            // when the presentation is scaled to fit different resolutions. Can be
+            // specified using percentage units.
+            width: 1920,
+            height: 1200,
+            // The display mode that will be used to show slides
+            display: 'block',
+                    math: {
+                      <!--mathjax: '../html_srcs/reveal.js/plugin/math/mathjax/tex-mml-chtml.js',-->
+                      <!--config: 'tex-mml-chtml',-->
+                      <!--tex2jax: {-->
+                            <!--inlineMath: [['\\(','\\)']],-->
+                            <!--displayMath: [['\\[','\\]']],-->
+                            <!--balanceBraces: true,-->
+                            <!--processEscapes: false,-->
+                            <!--processRefs: true,-->
+                            <!--processEnvironments: true,-->
+                            <!--preview: 'TeX',-->
+                            <!--skipTags: ['script','noscript','style','textarea','pre','code'],-->
+                            <!--ignoreClass: 'tex2jax_ignore',-->
+                            <!--processClass: 'tex2jax_process'-->
+                      <!--},-->
+                      CommonHTML: {scale: 80},
+                    },
+            reveald3: {
+                            runLastState: true, // true/false, default: true
+                            onSlideChangedDelay: 200,
+                            mapPath: false, // true / false / "spefific/path/as/string", default: false
+                            tryFallbackURL: true, // true/false, default false
+                            disableCheckFile: false, //default false
+                    },
+
+            // reveal.js plugins
+            plugins: [
+                RevealMath,
+                RevealHighlight,
+                RevealNotes,
+                RevealSearch,
+                RevealZoom,
+                RevealChart,
+                RevealChalkboard,
+            ],
+            chalkboard: {
+                boardmarkerWidth: 4,
+                chalkWidth: 7,
+                boardmarkers : [
+                    { color: 'rgba(248,248,242,1)',
+                      cursor: 'url(' + path + 'img/boardmarker-black.png), auto' },
+                    { color: 'rgba(102,217,239,1)',
+                      cursor: 'url(' + path + 'img/boardmarker-blue.png), auto' },
+                    { color: 'rgba(249,38,114,1)',
+                      cursor: 'url(' + path + 'img/boardmarker-red.png), auto' },
+                    { color: 'rgba(166,226,46,1)',
+                      cursor: 'url(' + path + 'img/boardmarker-green.png), auto' },
+                    { color: 'rgba(253,151,31,1)',
+                      cursor: 'url(' + path + 'img/boardmarker-orange.png), auto' },
+                    { color: 'rgba(174,129,255,1)',
+                      cursor: 'url(' + path + 'img/boardmarker-purple.png), auto' },
+                    { color: 'rgba(255,231,146,1)',
+                      cursor: 'url(' + path + 'img/boardmarker-yellow.png), auto '}
+                ],
+                chalks: [
+                    { color: 'rgba(248,248,242,0.5)',
+                      cursor: 'url(' + path + 'img/chalk-white.png), auto' },
+                    { color: 'rgba(102,217,239,0.5)',
+                      cursor: 'url(' + path + 'img/chalk-blue.png), auto' },
+                    { color: 'rgba(249,38,114,0.5)',
+                      cursor: 'url(' + path + 'img/chalk-red.png), auto' },
+                    { color: 'rgba(166,226,46,0.5)',
+                      cursor: 'url(' + path + 'img/chalk-green.png), auto' },
+                    { color: 'rgba(253,151,31,0.5)',
+                      cursor: 'url(' + path + 'img/chalk-orange.png), auto' },
+                    { color: 'rgba(174,129,255,0.5)',
+                      cursor: 'url(' + path + 'img/chalk-purple.png), auto' },
+                    { color: 'rgba(255,231,146,0.5)',
+                      cursor: 'url(' + path + 'img/chalk-yellow.png), auto '}
+                ]
+            },
+            dependencies: [
+                {
+                    src: "js/plugin/title-footer/title-footer.js",
+                    async: true,
+                    callback:
+                        function() {
+                            title_footer.initialize({
+                                css: "css/plugin/title-footer/title-footer.css"
+                            });
+                        }
+                }
+            ],
+        });
+        initQuestions();
+    </script>
+  </body>
+</html>
