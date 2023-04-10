@@ -20,7 +20,7 @@
 <div class="slides">
 
 <section id="Constants1" class="slide">
-<h2>Working with Constants</h2>
+<h2>Syntax for Constants</h2>
 <div class="Question MultipleChoice">
 Which of the following styles is commonly (although not necessarily) used for variables which are <b>constant</b>?
 <p class="Response" data-response="Incorrect">(a) <span class="mb"> width = 100</span>
@@ -40,7 +40,7 @@ Typically, they are represented using all capital letters.
 </section>
 
 <section id="Constants2" class="slide">
-<h2>Working with Constants</h2>
+<h2>Math with Constants</h2>
 <div class="Question MultipleChoice">
 With the given constants
 <span class="mb"><span class="bbcomment">WINDOW_WIDTH</span></span> and
@@ -64,7 +64,7 @@ would make the left edge of the square at the center. Thus, the square needs to 
 </section>
 
 <section id="Constants3" class="slide">
-<h2>Working with Constants</h2>
+<h2>More Math with Constants</h2>
 <div class="Question MultipleChoice">
 Using the same constants, which of the following would create a square centered in the left half of the window and at the top?
 <p class="Response" data-response="Correct">(a) <span class="mb"> gw.add(square, <span class="bbcomment">WINDOW_WIDTH</span>/4 - (<span class="bbcomment">SQUARE_WIDTH</span>/2), 0)</span></p>
@@ -82,6 +82,36 @@ Using the same constants, which of the following would create a square centered 
 </div>
 </section>
 
+<section id="Constants4" class="slide">
+<h2>Loop Math with Constants</h2>
+<div class="Question MultipleChoice">
+Which of the following loops would create lines which split the window into thirds?
+  
+<p class="Response" data-response="Incorrect">(a) 
+  <span class='keyword'>for</span> i <span class='keyword'>in</span> <span class='builtin'>range</span>(2): <br>
+  &nbsp; &nbsp; &nbsp; &nbsp; gw.add(line, WINDOW<span class='u'>_</span>WIDTH/3, 0)
+</p>
+
+<p class="Response" data-response="Correct">(b) 
+  <span class='keyword'>for</span> i <span class='keyword'>in</span> <span class='builtin'>range</span>(1,3): <br>
+    &nbsp; &nbsp; &nbsp; &nbsp; gw.add(line, i*WINDOW<span class='u'>_</span>WIDTH/3, 0)
+</p>
+
+<p class="Response" data-response="Incorrect">(c)
+  <span class='keyword'>for</span> i <span class='keyword'>in</span> <span class='builtin'>range</span>(3): <br>
+  &nbsp; &nbsp; &nbsp; &nbsp; gw.add(line, WINDOW<span class='u'>_</span>WIDTH/3, 0)
+</p>
+  
+<p class="Response" data-response="Incorrect">(d)
+  <span class='keyword'>for</span> i <span class='keyword'>in</span> <span class='builtin'>range</span>(2): <br>
+    &nbsp; &nbsp; &nbsp; &nbsp; gw.add(line, i*WINDOW<span class='u'>_</span>WIDTH/3, 0)
+</p>
+<div class="NarrativeArea">
+<p class="Narrative Correct">Correct!</p>
+<p class="Narrative Incorrect">To split the window in thirds, we want to create lines at 1/3 and 2/3 the window width. To accomplish that, we can divide the window width by three, then multiply it by the values in range(1,3).</p>
+</div>
+</div>
+</section>
 
 
 <script src="js/reveal.js"></script>
